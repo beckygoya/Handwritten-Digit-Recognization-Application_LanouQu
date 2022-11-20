@@ -14,12 +14,12 @@ public class Session {
             for (int i = 0; i < student.quizScore.length; i++) {
                 sum += student.quizScore[i];
             }
-        System.out.printf("The average quiz score for %s is %f.%n", student.getName(), sum / student.quizScore.length);
+        System.out.printf("The average quiz score for %s is %f.\n", student.getName(), sum / student.quizScore.length);
         }
     }
 
     public void getSortedQuizScores() {
-        ArrayList<Float> quizScore = new ArrayList<>();
+        ArrayList<Integer> quizScore = new ArrayList<>();
         for (Student student : studentList) {
             quizScore.addAll(new ArrayList<>(Arrays.asList(student.quizScore)));
         }
@@ -39,7 +39,8 @@ public class Session {
     public void getExamScoresOfFullTimeStudent() {
         for (Student student : studentList) {
             if (student instanceof FullTimeStudent) {
-                System.out.printf("Exam Scores of full time student %s are %s,%s\n", student.getName(), ((FullTimeStudent) student).getExamScore1(),((FullTimeStudent) student).getExamScore2());
+                System.out.printf("Exam Scores of full time student %s are %.0f,%.0f\n", student.getName(),
+                        ((FullTimeStudent) student).getExamScore1(),((FullTimeStudent) student).getExamScore2());
             }
         }
     }

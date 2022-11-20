@@ -9,14 +9,14 @@ public class Main {
                 FullTimeStudent fullTimeStudent = new FullTimeStudent("FullTimeStudent-" + i);
                 session.studentList[i] = fullTimeStudent;
                 Random rd = new Random();
-                fullTimeStudent.setExamScore1(100 * rd.nextFloat());
-                fullTimeStudent.setExamScore2(100 * rd.nextFloat());
+                fullTimeStudent.setExamScore1(50 + rd.nextInt(50));
+                fullTimeStudent.setExamScore2(50 + rd.nextInt(50));
             } else {
                 session.studentList[i] = new PartTimeStudent("PartTimeStudent-" + i);
             }
             for (int j = 0; j < session.studentList[i].quizScore.length; j++) {
                 Random rd = new Random();
-                session.studentList[i].quizScore[j] = 100 * rd.nextFloat();
+                session.studentList[i].quizScore[j] = 50 + rd.nextInt(50);
             }
         }
         session.getAverageQuizScores();
