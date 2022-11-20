@@ -10,7 +10,7 @@ public class Main {
 
             // Serialization
             try {
-                //Saving of object in a file
+                // Saving of object in a file
                 FileOutputStream file = new FileOutputStream(filename);
                 ObjectOutputStream out = new ObjectOutputStream(file);
                 // Method for serialization of object
