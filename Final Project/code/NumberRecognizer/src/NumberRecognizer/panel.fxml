@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.Blend?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.canvas.Canvas?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500" prefWidth="500" style="-fx-background-color:white;" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="NumberRecognizer.Controller">
+   <top>
+      <AnchorPane BorderPane.alignment="CENTER">
+         <children>
+            <Label layoutX="250" prefHeight="57" prefWidth="350" text="Please Draw A Number Below">
+               <font>
+                  <Font name="Roboto" size="25" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </top>
+   <left>
+      <AnchorPane prefHeight="380" prefWidth="180" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="draw" layoutX="82" layoutY="110" contentDisplay="CENTER" defaultButton="true" mnemonicParsing="false" onAction="#getContext" prefHeight="40.0" prefWidth="68.0" stylesheets="style.css" text="Draw">
+               <font>
+                  <Font name="Roboto" size="16" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button fx:id="clear" layoutX="82" layoutY="194" defaultButton="true" mnemonicParsing="false" onAction="#clearCanvas" prefHeight="40.0" prefWidth="68.0" stylesheets="style.css" text="Clear">
+               <font>
+                  <Font name="Roboto" size="16.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <ImageView layoutX="14" layoutY="104" fitHeight="54.0" fitWidth="64"  pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="/pic/pen.jpeg" />
+               </image>
+            </ImageView>
+            <ImageView layoutX="18" layoutY="188" fitHeight="48.0" fitWidth="50" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="/pic/clear.jpeg" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+   </left>
+   <bottom>
+      <AnchorPane prefHeight="61" prefWidth="800" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="recognize" layoutX="400" layoutY="25" defaultButton="true" mnemonicParsing="false" onAction="#recognizeImage" stylesheets="style.css" text="Recognize">
+               <font>
+                  <Font name="Roboto" size="16.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <ImageView layoutX="350" layoutY="19" fitHeight="48" fitWidth="50"  pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="/pic/run.jpeg" />
+               </image>
+            </ImageView>
+
+            <Button layoutX="122" layoutY="130" text="Answer">
+               <font>
+                  <Font name="Roboto" size="24" />
+               </font>
+            </Button>
+            <Label fx:id="result" layoutX="290" layoutY="80" alignment="CENTER" contentDisplay="CENTER" prefHeight="210.0" prefWidth="290.0" style="-fx-border-color: black;" textAlignment="CENTER">
+               <font>
+                  <Font name="Roboto" size="96" />
+               </font>
+            </Label>
+            <ImageView layoutX="60" layoutY="100" fitHeight="53.0" fitWidth="51.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="/pic/ans.jpeg" />
+               </image>
+            </ImageView>
+
+         </children>
+         <effect>
+            <Blend />
+         </effect>
+      </AnchorPane>
+
+   </bottom>
+   <right>
+      <AnchorPane prefHeight="382" prefWidth="100" BorderPane.alignment="CENTER">
+      </AnchorPane>
+   </right>
+   <center>
+      <AnchorPane prefHeight="360" prefWidth="500" style="-fx-border-color: black;" BorderPane.alignment="CENTER">
+         <children>
+            <Canvas fx:id="canvas" layoutX="7" layoutY="11" height="360"  width="500" />
+         </children>
+      </AnchorPane>
+   </center>
+</BorderPane>
